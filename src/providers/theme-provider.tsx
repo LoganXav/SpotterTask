@@ -1,7 +1,7 @@
 import React from 'react';
-import useThemeMode from '~/hooks/use-theme-mode';
+import useThemeMode from '@/hooks/use-theme-mode';
 import type { Palette } from '@mui/material/styles';
-import { darkTheme, lightTheme } from '~/styles/theme';
+import { darkTheme, lightTheme } from '@/styles/theme';
 import { ThemeProvider, CssBaseline, useMediaQuery } from '@mui/material';
 
 function AppThemeProvider({ children }: { children: React.ReactNode }) {
@@ -34,6 +34,7 @@ function AppThemeProvider({ children }: { children: React.ReactNode }) {
       'text',
       'background',
       'action',
+      'muted',
     ];
 
     paletteKeys.forEach((paletteKey) => {

@@ -1,4 +1,4 @@
-import { useThemeStore } from '~/store/use-theme-store';
+import { useThemeStore } from '@/store/use-theme-store';
 
 function useThemeMode() {
   const themeMode = useThemeStore((state) => state.themeMode);

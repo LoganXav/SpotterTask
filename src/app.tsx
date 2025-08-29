@@ -1,17 +1,15 @@
-import '~/styles/global.css';
-import ThemeToggler from '~/components/theme-toggler';
-import AppThemeProvider from '~/providers/theme-provider';
+import '@/styles/global.css';
+import AppNavbar from '@/components/layout/navbar';
 
 function App() {
   return (
-    <>
-      <AppThemeProvider>
-        <div className="flex items-center justify-center min-h-screen">
-          Hello World
-          <ThemeToggler />
-        </div>
-      </AppThemeProvider>
-    </>
+    <div className="min-h-screen bg-background-default dark:bg-background-paper">
+      <AppNavbar />
+      <div className="h-full flex items-center justify-center font-sans">
+        Google Flights
+      </div>
+      {/* <AppFooter /> */}
+    </div>
   );
 }
 

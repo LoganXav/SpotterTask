@@ -1,1 +1,19 @@
-@import "tailwindcss";
+@font-face {
+  font-family: 'ProductSans';
+  src: url('/fonts/ProductSans-Medium.woff');
+}
+
+@import 'tailwindcss';
+
+@theme {
+  --color-background-default: var(--color-mui-background-default);
+  --color-background-paper: var(--color-mui-background-paper);
+  --color-text-primary: var(--color-mui-text-primary);
+  --color-primary-main: var(--color-mui-primary-main);
+  --color-muted-main: var(--color-mui-muted-main);
+  --color-primary-light: var(--color-mui-primary-light);
+  --color-primary-contrastText: var(--color-mui-primary-contrastText);
+  --color-secondary-main: var(--color-mui-secondary-main);
+
+  --font-sans: ProductSans, 'sans-serif';
+}
