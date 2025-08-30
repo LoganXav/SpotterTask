@@ -9,6 +9,7 @@ function AppFooter() {
         <Box className="flex flex-wrap gap-2 items-center">
           {footerPageSettings.map(({ label, icon: Icon }) => (
             <Button
+              key={label}
               disableRipple
               variant="text"
               className="flex items-center gap-2 rounded-full border px-4 py-1 normal-case transition-colors text-sm font-medium border-muted-main hover:bg-primary-light/30"
@@ -35,9 +36,9 @@ function AppFooter() {
         </Typography>
 
         <Box className="grid gap-4 grid-cols-3 lg:grid-cols-6">
-          {footerLinks.map((link) => (
+          {footerLinks.map((link, idx) => (
             <Typography
-              key={link}
+              key={idx}
               className="text-center hover:underline text-primary-contrastText max-w-2xl font-roboto cursor-pointer"
               variant="body2"
             >
@@ -47,8 +48,8 @@ function AppFooter() {
         </Box>
       </Box>
       <Box className="py-8 flex items-center space-x-6 justify-center">
-        {['International sites', 'Explore flights'].map((label) => (
-          <Box className="flex items-center space-x-1">
+        {['International sites', 'Explore flights'].map((label, idx) => (
+          <Box className="flex items-center space-x-1" key={idx}>
             <Typography className="text-primary-contrastText">
               {label}
             </Typography>

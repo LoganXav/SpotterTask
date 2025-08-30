@@ -14,9 +14,9 @@ export const lightTheme = createTheme({
     mode: 'light',
     primary: { main: '#eef4fe', light: '#eef4fe', contrastText: '#1976d2' },
     secondary: { main: '#ff4081' },
-    background: { default: '#fafafa', paper: '#ffffff' },
+    background: { default: '#ffffff', paper: '#ffffff' },
     muted: { main: '#dadce0' },
-    text: { primary: '#3c4043' },
+    text: { primary: '#3c4043', secondary: '#70757a' },
   },
   typography: {
     fontFamily: 'ProductSans, sans-serif',
@@ -87,6 +87,13 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Roboto',
+        },
+      },
+    },
   },
 });
 
@@ -95,8 +102,8 @@ export const darkTheme = createTheme({
     mode: 'dark',
     primary: { main: '#ffff', light: '#5f6368F2', contrastText: '#a8c7fa' },
     secondary: { main: '#f48fb1' },
-    background: { default: '#121212', paper: '#202124' },
-    muted: { main: '#5f6368' },
+    background: { default: '#404040', paper: '#202124' },
+    muted: { main: '#5f6368', contrastText: '#5f6368' },
   },
   typography: {
     fontFamily: 'ProductSans, sans-serif',

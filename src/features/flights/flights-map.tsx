@@ -25,7 +25,7 @@ function FlightsMap() {
         <Box className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         <Box className="absolute inset-0 flex items-center justify-center">
-          <Button className="bg-white rounded-full px-6 py-1 shadow normal-case">
+          <Button className="bg-background-paper rounded-full px-6 py-1 shadow normal-case">
             <Typography className="text-primary-contrastText">
               Explore destinations
             </Typography>

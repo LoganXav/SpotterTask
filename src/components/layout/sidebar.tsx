@@ -1,7 +1,7 @@
 import { cn } from '@/utils/style';
 import { NavLink } from 'react-router-dom';
 import HotelIcon from '@mui/icons-material/Hotel';
-import { navLinks, type NavItem } from '@/config/navigation-links';
+import { navLinks, type AppRoute } from '@/config/navigation-links';
 import { Drawer, List, ListItemButton, Box, Typography } from '@mui/material';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   onClose: () => void;
   topOffset?: number;
   drawerWidth?: number;
-  links?: NavItem[];
+  links?: AppRoute[];
 };
 
 export default function AppSidebar({
@@ -95,7 +95,7 @@ export default function AppSidebar({
                   className={cn(
                     'flex items-center gap-3 px-4 py-4 transition-colors rounded-l-none rounded-r-full w-[96%]',
                     'text-sm font-medium',
-                    'hover:bg-primary-light/20',
+                    'hover:bg-primary-light/40',
                     isActive && 'bg-primary-main border-primary-main'
                   )}
                 >

@@ -23,6 +23,7 @@
   --color-background-default: var(--color-mui-background-default);
   --color-background-paper: var(--color-mui-background-paper);
   --color-text-primary: var(--color-mui-text-primary);
+  --color-text-primary: var(--color-mui-text-secondary);
   --color-primary-main: var(--color-mui-primary-main);
   --color-muted-main: var(--color-mui-muted-main);
   --color-primary-light: var(--color-mui-primary-light);
