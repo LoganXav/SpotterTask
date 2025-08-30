@@ -3,7 +3,6 @@ import { cn } from '@/utils/style';
 import AppSidebar from './sidebar';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
-import { NavLink } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -13,15 +12,17 @@ import IconButton from '@mui/material/IconButton';
 import { Button, Typography } from '@mui/material';
 import { navLinks } from '@/config/navigation-links';
 import ThemeToggler from '@/components/theme-toggler';
+import { NavLink, useLocation } from 'react-router-dom';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 
 function AppNavbar() {
   const [open, setOpen] = React.useState(false);
   const setDrawerOpen = (val: boolean) => () => setOpen(val);
+  const { pathname } = useLocation();
 
   return (
     <>
-      <AppBar position="static" elevation={0} className="border-b">
+      <AppBar position="sticky" elevation={0} className="border-b">
         <Container maxWidth="2xl">
           <Toolbar disableGutters className="flex justify-between items-center">
             <Box className="flex items-center gap-12">
@@ -33,40 +34,39 @@ function AppNavbar() {
               </Box>
 
               <Box className="hidden lg:flex items-center gap-2">
-                {navLinks.map(({ label, icon: Icon, to }) => {
+                {navLinks.map(({ label, icon: Icon, to, match }) => {
                   const isFlight = label.toLowerCase().includes('flight');
+                  const isActive = match ? match(pathname) : pathname === to;
 
                   return (
-                    <NavLink key={to} to={to} end>
-                      {({ isActive }) => (
-                        <Button
-                          disableRipple
-                          variant="text"
+                    <NavLink key={to} to={to}>
+                      <Button
+                        disableRipple
+                        variant="text"
+                        className={cn(
+                          'flex items-center gap-2 rounded-full border px-4 py-2 normal-case transition-colors text-sm font-medium border-muted-main',
+                          isActive
+                            ? 'bg-primary-main border-primary-main'
+                            : 'hover:bg-primary-light/30'
+                        )}
+                      >
+                        <Icon
                           className={cn(
-                            'flex items-center gap-2 rounded-full border px-4 py-2 normal-case transition-colors text-sm font-medium border-muted-main',
+                            'w-4 h-4 transition-colors text-primary-contrastText',
+                            isFlight && 'rotate-45'
+                          )}
+                        />
+                        <Typography
+                          className={cn(
+                            'transition-colors',
                             isActive
-                              ? 'bg-primary-main border-primary-main'
-                              : 'hover:bg-primary-light/30'
+                              ? 'text-primary-contrastText'
+                              : 'text-text-primary'
                           )}
                         >
-                          <Icon
-                            className={cn(
-                              'w-4 h-4 transition-colors text-primary-contrastText',
-                              isFlight && 'rotate-45'
-                            )}
-                          />
-                          <Typography
-                            className={cn(
-                              'transition-colors',
-                              isActive
-                                ? 'text-primary-contrastText'
-                                : 'text-text-primary'
-                            )}
-                          >
-                            {label}
-                          </Typography>
-                        </Button>
-                      )}
+                          {label}
+                        </Typography>
+                      </Button>
                     </NavLink>
                   );
                 })}

@@ -6,7 +6,7 @@ import { ThemeProvider, CssBaseline, useMediaQuery } from '@mui/material';
 
 function AppThemeProvider({ children }: { children: React.ReactNode }) {
   const isSystemDark = useMediaQuery('(prefers-color-scheme: dark)');
-  const [themeMode] = useThemeMode();
+  const { themeMode } = useThemeMode();
 
   const isDark =
     (themeMode === 'media' && isSystemDark) || themeMode === 'dark';
@@ -14,12 +14,12 @@ function AppThemeProvider({ children }: { children: React.ReactNode }) {
   const theme = isDark ? darkTheme : lightTheme;
 
   React.useEffect(() => {
-    const body = document.body;
+    const root = document.documentElement;
 
     if (isDark) {
-      body.classList.add('dark');
+      root.classList.add('dark');
     } else {
-      body.classList.remove('dark');
+      root.classList.remove('dark');
     }
 
     // Expose palette colors as CSS variables

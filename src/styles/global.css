@@ -1,6 +1,20 @@
 @font-face {
   font-family: 'ProductSans';
   src: url('/fonts/ProductSans-Medium.woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'ProductSans';
+  src: url('/fonts/ProductSans-Regular.woff');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @import 'tailwindcss';
@@ -16,4 +30,5 @@
   --color-secondary-main: var(--color-mui-secondary-main);
 
   --font-sans: ProductSans, 'sans-serif';
+  --font-roboto: Roboto, 'sans-serif';
 }

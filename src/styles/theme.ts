@@ -60,6 +60,33 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'transparent',
+          borderColor: '#dadce0',
+          boxShadow: 'none',
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'transparent',
+          paddingRight: 0,
+          paddingLeft: 0,
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'transparent',
+          paddingRight: 0,
+          paddingLeft: 0,
+        },
+      },
+    },
   },
 });
 
@@ -68,9 +95,8 @@ export const darkTheme = createTheme({
     mode: 'dark',
     primary: { main: '#ffff', light: '#5f6368F2', contrastText: '#a8c7fa' },
     secondary: { main: '#f48fb1' },
-    background: { default: '#121212', paper: '#1e1e1e' },
+    background: { default: '#121212', paper: '#202124' },
     muted: { main: '#5f6368' },
-    // text: { primary: '#fffff' },
   },
   typography: {
     fontFamily: 'ProductSans, sans-serif',
@@ -90,17 +116,30 @@ export const darkTheme = createTheme({
         },
       },
     },
-    MuiToolbar: {
+    MuiAccordion: {
       styleOverrides: {
         root: {
-          backgroundColor: '#1e1e1e',
+          backgroundColor: '#202124',
+          borderColor: '#5f6368',
+          boxShadow: 'none',
         },
       },
     },
-    MuiContainer: {
+    MuiAccordionSummary: {
       styleOverrides: {
         root: {
-          backgroundColor: '#1e1e1e',
+          backgroundColor: '#202124',
+          paddingRight: 0,
+          paddingLeft: 0,
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#202124',
+          paddingRight: 0,
+          paddingLeft: 0,
         },
       },
     },

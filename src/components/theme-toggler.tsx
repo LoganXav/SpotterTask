@@ -1,7 +1,3 @@
-import React from 'react';
-import useThemeMode from '@/hooks/use-theme-mode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import {
   IconButton,
   ListSubheader,
@@ -9,11 +5,15 @@ import {
   MenuItem,
   Tooltip,
 } from '@mui/material';
+import React from 'react';
+import useThemeMode from '@/hooks/use-theme-mode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 
 export default function ThemeToggler() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const [themeMode, setThemeMode] = useThemeMode();
+  const { themeMode, setThemeMode } = useThemeMode();
 
   const [resolvedMode, setResolvedMode] = React.useState<'light' | 'dark'>(
     'light'
